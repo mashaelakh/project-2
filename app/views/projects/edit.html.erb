@@ -1,6 +1,15 @@
-<h1>Editing Project</h1>
+<h1>Edit Project</h1>
+<%= form_for @project, url: {action: "update"} do |form|%>
+<%= form.label :name %>
+<%= form.text_field :name%>
+<br>
+<%= form.label :description%>
+<%= form.text_field :description%>
+<br>
+<%= form.label :contactinfo%>
+<%=form.text_field :contactinfo%>
+<br>
+<%= form.submit "edit" %>
+<%end%>
 
-<%= render 'form', project: @project %>
-
-<%= link_to 'Show', @project %> |
 <%= link_to 'Back', projects_path %>

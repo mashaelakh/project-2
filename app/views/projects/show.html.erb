@@ -16,7 +16,8 @@
 </p>
 
 <p>
-  <strong>Modified by:</strong>
+  <strong>Modified by: <%= @project.user.email %> </strong>
+  <%# TODO:UPDATE THIS LINE %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

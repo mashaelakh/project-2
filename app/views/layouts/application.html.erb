@@ -2,8 +2,6 @@
 <html>
   <head>
     <title>Project</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,11 +12,14 @@
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p> 
 
-  <nav><% if (user_signed_in?) %>
-<%= link_to 'SignOut !', destroy_user_session_path, method: :delete %>
- <%= link_to 'Edit_user ?', edit_user_registration_path, method: :get %>
-
-<%end%>
+  <nav>
+      <% if (user_signed_in?) %>
+      <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
+      <% else %>
+      <%= link_to 'SignIn', new_user_session_path, method: :get %>
+      <%= link_to 'Edit_user', edit_user_registration_path, method: :get %>
+      <%end%>
+      <%= link_to 'All projects', projects_path %>
 </nav>
     <%= yield %>
   </body>
