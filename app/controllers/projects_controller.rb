@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
     def destroy
       @project = current_user.projects.find(params[:id])
       @project.destroy
-      reditect_to projects_path
+      redirect_to projects_path
     end
   
     private
@@ -51,4 +51,3 @@ class ProjectsController < ApplicationController
         params.require(:project).permit(:name, :description, :contactinfo)
       end
   end
-  
