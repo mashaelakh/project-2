@@ -1,0 +1,9 @@
+<h1> Find project by user</h1>
+<% @users.each do |user| %>
+      <tr>
+        <td><%= user.user_name  %> </td>
+
+        <%= link_to ' Projects', projects_path  %>
+        
+      </tr>
+    <% end %>

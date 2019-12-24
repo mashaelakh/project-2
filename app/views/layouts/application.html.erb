@@ -2,26 +2,30 @@
 <html>
   <head>
     <title>Project</title>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
- 
+   <nav>
+
+      <%= link_to 'All projects', projects_path %>
+      <% if (user_signed_in?) %>
+      <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Edit_user', edit_user_registration_path, method: :get %>
+      <span> <%= current_user.user_name %></span>
+      <% else %>
+      <%= link_to 'SignIn', new_user_session_path, method: :get %>
+      <%end%>
+      
+</nav>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p> 
 
-  <nav>
-      <% if (user_signed_in?) %>
-      <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
-      <% else %>
-      <%= link_to 'SignIn', new_user_session_path, method: :get %>
-      <%= link_to 'Edit_user', edit_user_registration_path, method: :get %>
-      <%end%>
-      <%= link_to 'All projects', projects_path %>
-</nav>
+
     <%= yield %>
+  
   </body>
 </html>

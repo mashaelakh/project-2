@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+body{
+/* background-image: url(https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80); */
+background-repeat: none  ;
+background-size: cover  ;
+margin: auto 20%;
+}

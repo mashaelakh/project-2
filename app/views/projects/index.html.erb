@@ -1,26 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1>All Projects</h1>
 
-<table>
-  <thead>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
+    <% User.all.each do |user| %>
       <tr>
+       <p> <strong>Projects Modified by:</strong>
+        <td><%= user.user_name %></td></p>
        
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.contactinfo %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Delete', project_path(project), method: :DELETE, data: { confirm: 'Are you sure?' } %></td>
-        
+      <p> <% user.projects.each do |project|%> 
+       <%= project.name%>
+        <td><%= link_to 'Show', project_path(project)%></td></p>
+       <%end%>
+       
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
 <%= link_to 'Add New project', new_project_path %>

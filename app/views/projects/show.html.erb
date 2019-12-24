@@ -9,17 +9,17 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
-
+<p>
+  <strong>Modified by: <%= @project.user.user_name %> </strong></p>
 <p>
   <strong>Contact Information:</strong>
   <%= @project.contactinfo %>
 </p>
 
 <p>
-  <strong>Modified by: <%= @project.user.email %> </strong>
   <%# TODO:UPDATE THIS LINE %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Edit', edit_project_path(@project) %> 
 <%= link_to 'Back', projects_path %>
-
+<td><%= link_to 'Delete', project_path(@project), method: :DELETE, data: { confirm: 'Are you sure?' } %></td>
