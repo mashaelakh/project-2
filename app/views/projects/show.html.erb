@@ -15,29 +15,28 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
-
-
+<hr>
 <p>
-  <%# TODO:UPDATE THIS LINE %>
+<strong>Comments:</strong>
 </p>
 <% @project.comments.each do |comment|%>
 <p><%= comment.body%></p>
 <%end%>
 <hr>
-<div class="sb">
+
 <%= form_for @comment, :url => project_comments_path(@project) do |f| %>
 
   <%= f.label :comment , "Do you have any comment?"%>
    <br>
 
   <%= f.text_area :body , size:"50 x 3" , :id=>"tarea"%>
-  </div>
+  <br>
   <%= f.submit "Submit", :class=>"btn btn-dark"%>
-
+<br>
 <% end %>
 <br>
 
 <%= link_to 'Edit', edit_project_path(@project), :class=>"btn btn-dark" %> 
-<%= link_to 'Back', projects_path, :class=>"btn btn-dark" %>
+<%= link_to 'Back', projects_path, :class=>"btn btn-dark" %> 
 <td><%= link_to 'Delete Project', project_path(@project), method: :DELETE, data: { confirm: 'Are you sure?' }, :class=>"btn btn-dark" %></td>
 </div>

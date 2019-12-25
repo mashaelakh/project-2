@@ -62,14 +62,7 @@ font-size: 20px;
    border: none;
 
 }
-.sp{
-    display: flex;
-    justify-content: space-around;
-    align-self: center;
-}
-#tarea {
-    margin-left: 90px;
-}
+
 .maincontent{
  margin-left: 15%;
  text-align:center;
