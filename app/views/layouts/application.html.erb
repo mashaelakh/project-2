@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Project</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,18 +13,26 @@
   </head>
 
   <body>
-   <nav>
+  <link href="https://fonts.googleapis.com/css?family=Caveat|Permanent+Marker|Source+Serif+Pro&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-      <%= link_to 'All projects', projects_path %>
+
+  <div class="header">
+   
       <% if (user_signed_in?) %>
-      <%= link_to 'SignOut', destroy_user_session_path, method: :delete %>
-      <%= link_to 'Edit_user', edit_user_registration_path, method: :get %>
-      <span> <%= current_user.user_name %></span>
+      <span id="welcome"> Welcome  <%= current_user.user_name %></span>
+      <ul class="nav">
+     <li class="nav-item"> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete , :class=>"nav-link"%><li>
+     <li class="nav-item"> <%= link_to 'Edit user', edit_user_registration_path, method: :get, :class=>"nav-link" %> </li>
+      
       <% else %>
-      <%= link_to 'SignIn', new_user_session_path, method: :get %>
+      <%= link_to 'Sign In', new_user_session_path, method: :get, :id=>"signout" %>
       <%end%>
       
-</nav>
+</ul>
+</div>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p> 
 

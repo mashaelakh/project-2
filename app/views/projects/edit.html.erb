@@ -1,15 +1,23 @@
+<div class= "center">
+<div class= "new">
 <h1>Edit Project</h1>
 <%= form_for @project, url: {action: "update"} do |form|%>
-<%= form.label :name %>
-<%= form.text_field :name%>
+<%= form.label :name%>
+    <br>
+    <%= form.text_field :name%>
+  <br>
+  <br>
+    <%= form.label :description%>
+    <br>
+    <%=form.text_area :description , size: "50x 10"%>
 <br>
-<%= form.label :description%>
-<%= form.text_field :description%>
+    <%= form.label :contactinfo%>
+    <br>
+    <%= form.text_field :contactinfo %>
 <br>
-<%= form.label :contactinfo%>
-<%=form.text_field :contactinfo%>
 <br>
 <%= form.submit "edit" %>
 <%end%>
 
 <%= link_to 'Back', projects_path %>
+</div> </div>

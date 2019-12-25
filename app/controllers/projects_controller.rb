@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   
     def show
       @project = Project.find(params[:id])
-
+      @comment = Project.find(params[:id]).comments.new
     end
   
     def new
@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
     end
   
     def edit
-      @project = current_user.projects.find(params[:id])
+     @project = current_user.projects.find(params[:id])
         ##{name:"xxx"}
     end
 

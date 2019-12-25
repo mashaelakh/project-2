@@ -1,9 +1,21 @@
-<h1> Find project by user</h1>
+<div class="center">
+<h1> PROJECTS </h1>
+</div>
+<div class="maincontent">
+<div class="d-flex flex-wrap">
+<div class="card">
+  <div class="card-body">
 <% @users.each do |user| %>
+    <h4 class="card-title"><%= user.user_name  %></h4>
+    <p class="card-text">
+    </p>
+   <%= link_to ' Projects', projects_path , :class=>"btn btn-dark" %> 
+  </div>
+</div>
+</div>
       <tr>
-        <td><%= user.user_name  %> </td>
-
-        <%= link_to ' Projects', projects_path  %>
+ 
         
       </tr>
     <% end %>
+    </div>

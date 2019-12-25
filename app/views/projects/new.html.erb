@@ -1,19 +1,26 @@
-
-<h1> Projects </h1>
+<div class="center">
+<div class= "new">
 <h2> Add New Project</h2>
 <%= form_for  @project, url: {action: "create"} do |form| %>
     <%= form.label :name%>
+    <br>
     <%= form.text_field :name%>
   <br>
+  <br>
     <%= form.label :description%>
-    <%=form.text_field :description%>
+    <br>
+    <%=form.text_area :description , size: "50x 10"%>
 <br>
     <%= form.label :contactinfo%>
+    <br>
     <%= form.text_field :contactinfo %>
+<br>
 <br>
     <%= form.submit "Save" %>
 <%end%>
 
 <%# render 'form', project: @project %>
-
+<br>
 <%= link_to 'Back', projects_path %>
+</div>
+</div>

@@ -1,25 +1,43 @@
-<p id="notice"><%= notice %></p>
 
+<div class="show">
 <p>
-  <strong>Name:</strong>
+  <strong>Project Name:</strong>
   <%= @project.name %>
 </p>
-
 <p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-<p>
-  <strong>Modified by: <%= @project.user.user_name %> </strong></p>
+  <strong>Modified by: </strong> <%= @project.user.user_name %> </p>
 <p>
   <strong>Contact Information:</strong>
   <%= @project.contactinfo %>
 </p>
+<p>
+<hr>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
 
 <p>
   <%# TODO:UPDATE THIS LINE %>
 </p>
+<% @project.comments.each do |comment|%>
+<p><%= comment.body%></p>
+<%end%>
+<hr>
+<div class="sb">
+<%= form_for @comment, :url => project_comments_path(@project) do |f| %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> 
-<%= link_to 'Back', projects_path %>
-<td><%= link_to 'Delete', project_path(@project), method: :DELETE, data: { confirm: 'Are you sure?' } %></td>
+  <%= f.label :comment , "Do you have any comment?"%>
+   <br>
+
+  <%= f.text_area :body , size:"50 x 3" , :id=>"tarea"%>
+  </div>
+  <%= f.submit "Submit", :class=>"btn btn-dark"%>
+
+<% end %>
+<br>
+
+<%= link_to 'Edit', edit_project_path(@project), :class=>"btn btn-dark" %> 
+<%= link_to 'Back', projects_path, :class=>"btn btn-dark" %>
+<td><%= link_to 'Delete Project', project_path(@project), method: :DELETE, data: { confirm: 'Are you sure?' }, :class=>"btn btn-dark" %></td>
+</div>

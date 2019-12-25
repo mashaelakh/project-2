@@ -17,5 +17,86 @@ body{
 /* background-image: url(https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80); */
 background-repeat: none  ;
 background-size: cover  ;
-margin: auto 20%;
+margin: auto ;
+background-color: #c8dad3;
+}
+#welcome {
+    font-size: 50px;
+    font-family: 'Caveat', cursive;
+
+}
+.header {
+    background-color: lightslategray;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 5px solid black;
+}
+.nav {
+    
+    align-content: center;
+font-size: 20px;
+
+
+}
+.nav a {
+    color:rgb(70, 68, 68);
+}
+#signout {
+    color:rgb(70, 68, 68);
+    margin-top: 30px;
+    margin-left:10px;
+    font-size: 25px;
+}
+.card{
+    width:170px;
+    margin: 30px;
+    background-color: #e3f6f5;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+.btn ,btn-dark{
+   background-color: lightslategray;
+   color:black;
+   border: none;
+
+}
+.sp{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+#tarea {
+    margin-left: 90px;
+}
+.maincontent{
+ margin-left: 15%;
+ text-align:center;
+}
+.center {
+    text-align:center;
+}
+h1 {
+    font-family: 'Bebas Neue', cursive;
+}
+.card-title {
+    font-family: 'Permanent Marker', cursive;
+    
+
+}
+
+.new{
+    background-color: #f2f6f5 ;
+    border-radius: 20px;
+    padding: 10px;
+    margin:0 20%;
+}
+.show {
+    background-color: #f2f6f5 ;
+    border-radius: 20px;
+    padding: 10px;
+    margin:0 10%;
+    min-height: 300px;
+    padding-left: 35px;
 }

@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
-
+<div class="center">
 <h1>All Projects</h1>
 
     <% User.all.each do |user| %>
-      <tr>
-       <p> <strong>Projects Modified by:</strong>
-        <td><%= user.user_name %></td></p>
+     
+        <strong>Modified by:</strong>
+        <%= user.user_name %>
+        <br>
+         <br>
+        <%= link_to 'Add New project', new_project_path, :class=>"btn btn-dark" %>
        
-      <p> <% user.projects.each do |project|%> 
-       <%= project.name%>
-        <td><%= link_to 'Show', project_path(project)%></td></p>
-       <%end%>
-       
-      </tr>
+        </div>
+        <div class="maincontent">
+        <div class="d-flex flex-wrap">
+          <% user.projects.each do |project|%> 
+          
+        <div class="card">
+          <div class="card-body">
+          <h4 class="card-title">
+       <%= project.name%></h4>
+
+        <%= link_to 'Show', project_path(project), :class=>"btn btn-dark"%>
+              </div>
+       </div>
+       <br>
+              <%end%>
     <% end %>
-  </tbody>
-</table>
-<%= link_to 'Add New project', new_project_path %>
+</div>
+</div>
