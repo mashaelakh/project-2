@@ -4,11 +4,8 @@
 
     <% User.all.each do |user| %>
      
-        <strong>Modified by:</strong>
-        <%= user.user_name %>
-        <br>
+      
          <br>
-        <%= link_to 'Add New project', new_project_path, :class=>"btn btn-dark" %>
        
         </div>
         <div class="maincontent">
@@ -26,5 +23,7 @@
        <br>
               <%end%>
     <% end %>
+     <%= link_to 'Add New project', new_project_path, :class=>"btn btn-dark" %>
+       
 </div>
 </div>
