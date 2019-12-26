@@ -1,21 +1,23 @@
+
+    <p id="notice"><%= notice %></p>
 <div class="center">
-<h1> PROJECTS </h1>
-</div>
-<div class="maincontent">
-<div class="d-flex flex-wrap">
-<div class="card">
-  <div class="card-body">
-<% @users.each do |user| %>
-    <h4 class="card-title"><%= user.user_name  %></h4>
-    <p class="card-text">
-    </p>
-   <%= link_to ' Projects', projects_path , :class=>"btn btn-dark" %> 
-  </div>
-</div>
-</div>
-      <tr>
- 
-        
-      </tr>
+<h1>All Projects</h1>
+        <br>
+         <br>
+        </div>
+        <div class="maincontent">
+        <div class="d-flex flex-wrap">
+          <% @users.each do |user|%> 
+          
+        <div class="card">
+          <div class="card-body">
+          <h4 class="card-title">
+       <%= user.user_name%></h4>
+
+        <%= link_to ' Projects', projects_path , :class=>"btn btn-dark" %> 
+              </div>
+       </div>
+       <br>
     <% end %>
-    </div>
+</div>
+</div>
