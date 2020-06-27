@@ -18,7 +18,7 @@ users projects.
 ## wireframes and user stories :
 * Day 1 :
 - User story
-- wire frame
+- Wire frame
 
 * Day 2 :
 - Ruby on Rails
